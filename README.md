@@ -12,7 +12,7 @@ No error example:
 #define PATH "/Users/myname/Music/"
 #define STARTING_DIR "Classical"
 ```
-The the `\` will concatenate, so the full path will be "/Users/myname/Music/Classical", resulting in no errors.
+The the `/` will concatenate, so the full path will be "/Users/myname/Music/Classical", resulting in no errors.
 
 Error example:
 ``` C
