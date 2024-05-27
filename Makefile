@@ -1,6 +1,6 @@
 COMPILER = clang
 SOURCE_LIBS = -Ilib/
-OSX_OPT = -L lib/ -framework CoreVideo -framework GLUT -framework Cocoa -framework IOKit -framework OpenGL lib/libraylib.a
+OSX_OPT = -L lib/ -framework CoreVideo -framework GLUT -framework Cocoa -framework IOKit -framework OpenGL lib/libraylib.a lib/libfutilities.a
 OSX_OUT = -o "bin/build_osx"
 MAIN = src/main.c
 
