@@ -57,14 +57,25 @@ int main(void) {
 	SetTargetFPS(60);
 	SetWindowFocused();
 
+	const char *pwd = GetWorkingDirectory();
+	char img_dir[BUFFER_SIZE];
+	strncpy(img_dir, pwd, BUFFER_SIZE);
+	strncat(img_dir, "/img/", BUFFER_SIZE);
+
 	// Load volume icon
-	Image volume_icon = LoadImage("/Users/guillermomarcoslara/Developer/MusicPlayer/img/vol.png");
+	char volume_icon_path[BUFFER_SIZE];
+	strncpy(volume_icon_path, img_dir, BUFFER_SIZE);
+	strncat(volume_icon_path, "vol.png", BUFFER_SIZE);
+	Image volume_icon = LoadImage(volume_icon_path);
 	ImageResize(&volume_icon, volume_icon.width/100, volume_icon.height/100);
 	Texture2D volume_texture = LoadTextureFromImage(volume_icon); // Image converted to texture, uploaded to GPU memory (VRAM)
 	UnloadImage(volume_icon);
 
 	// Load "Go to"
-	Image go_to_icon = LoadImage("/Users/guillermomarcoslara/Developer/MusicPlayer/img/go_to_icon.png");
+	char go_to_icon_path[BUFFER_SIZE];
+	strncpy(go_to_icon_path, img_dir, BUFFER_SIZE);
+	strncat(go_to_icon_path, "go_to_icon.png", BUFFER_SIZE);
+	Image go_to_icon = LoadImage(go_to_icon_path);
 	ImageResize(&go_to_icon, go_to_icon.width/6, go_to_icon.height/6);
 	Texture2D go_to_texture = LoadTextureFromImage(go_to_icon); // Image converted to texture, uploaded to GPU memory (VRAM)
 	UnloadImage(go_to_icon);
