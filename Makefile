@@ -5,6 +5,7 @@ OSX_OUT = -o "bin/build_osx"
 MAIN = src/main.c
 
 build_osx:
+	-@mkdir ./bin
 	$(COMPILER) $(MAIN) $(SOURCE_LIBS) $(OSX_OPT) $(OSX_OUT)
 
 run:
